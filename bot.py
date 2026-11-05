@@ -154,9 +154,8 @@ async def update_bot_status():
 
     status_text = f"📍 {city}, {region} • 🚗 {total:.1f} mi"
     activity = discord.Activity(
-        type=discord.ActivityType.custom,
-        name="location",
-        state=status_text,
+        type=discord.ActivityType.watching,
+        name=status_text,
     )
     await client.change_presence(activity=activity)
     print(f"  ✅ Status: {status_text}")
